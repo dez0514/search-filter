@@ -13,7 +13,8 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "build:shf-ui": "vue-cli-service build --target lib --dest lib src/components/index.js"
+    "svgo": "svgo -f packages/shf-icon/icons/svg --config=packages/shf-icon/icons/svgo.yml",
+    "build:shf-ui": "vue-cli-service build --target lib --dest lib packages/index.js"
   },
   "dependencies": {
     "core-js": "^3.6.5",

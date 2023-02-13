@@ -3,6 +3,7 @@
     <div class="padding">
       <div style="margin-bottom: 10px">
         <div @click.stop="testClick">click.stop can not close popover</div>
+        <el-button  @click.stop="testClick">test</el-button>
       </div>
       <shf-droplist 
         style="margin-left: 5px" 
@@ -34,9 +35,9 @@
         :is-switch="true"
         @getStatus="getStatusList" 
       >
-        <div slot="trigger-icon">
-          <svg-icon style="transform: rotate(90deg);" class="icon-filter" icon-class="open" />
-        </div>
+        <!-- <div slot="trigger-icon">
+          <shf-icon style="transform: rotate(90deg);" class="icon-filter" icon-class="open" />
+        </div> -->
       </shf-droplist>
       <shf-droplist 
         style="margin-left: 5px" 
@@ -49,9 +50,9 @@
         :is-switch="true"
         @getStatus="getStatusList" 
       >
-        <div slot="trigger">
-          <svg-icon style="transform: rotate(90deg);" class="icon-filter" icon-class="open" />
-        </div>
+        <!-- <div slot="trigger">
+          <shf-icon style="transform: rotate(90deg);" class="icon-filter" icon-class="open" />
+        </div> -->
         <div slot="droplist">
           <div @click="test">123</div>
         </div>

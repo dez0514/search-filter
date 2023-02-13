@@ -1,7 +1,8 @@
 # search-form-ui
 attention please: This is just a test for my own project, please forgive me if this caused any offence!
+注：仅用于我自己测试使用，如有冒犯，请见谅。
 
-## Usage
+## Usage (由于是基于elementUi写的组件，所以引入之后，也会全量引入elementUi)
 ```
 // install
 npm i shf-ui
@@ -49,7 +50,7 @@ Vue.use(shfUI)
   <!-- slot 插槽使用例子 -->
   <shf-droplist ...属性略...>
     <div slot="trigger-icon">
-      <svg-icon style="transform: rotate(90deg);" class="icon-filter" icon-class="open" />
+      <shf-icon style="transform: rotate(90deg);" class="icon-filter" icon-class="open" />
     </div>
   </shf-droplist>
   <!-- 插槽

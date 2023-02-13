@@ -7,7 +7,7 @@
             <div class="title-box flex-between">
               <div>
                 <slot name="trigger-icon">
-                  <svg-icon class="icon-filter" icon-class="filter" />
+                  <icon class="icon-filter" icon-class="filter" />
                 </slot>
               </div>
               <div class="title" v-if="title">{{ title }}</div>
@@ -30,9 +30,9 @@
                   :class="['list-item', 'flex-between', item[defaultProps.isCheck] ? 'check' : '', !isSwitch ? 'cursor' : '', item[defaultProps.disabled] ? 'disabled' : '']" @click="handleCheck(item)">
                   <div class="flex">
                     <div class="check-wrap">
-                      <svg-icon v-if="!isSwitch" class="icon-collect" icon-class="collect" />
-                      <svg-icon v-if="isSwitch && item[defaultProps.disabled]" class="icon-filter" icon-class="lock" />
-                      <svg-icon v-if="isSwitch && !item[defaultProps.disabled]" class="icon-filter" icon-class="open" />
+                      <icon v-if="!isSwitch" class="icon-collect" icon-class="collect" />
+                      <icon v-if="isSwitch && item[defaultProps.disabled]" class="icon-filter" icon-class="lock" />
+                      <icon v-if="isSwitch && !item[defaultProps.disabled]" class="icon-filter" icon-class="open" />
                     </div>
                     <div class="label">{{ item[defaultProps.label] }}</div>
                   </div>
@@ -50,8 +50,10 @@
   </div>
 </template>
 <script>
+import icon from '../../shf-icon'
 export default {
   name: 'shfDroplist',
+  components: { icon },
   props: {
     title: { // 触发器的title
       type: String,
