@@ -3,9 +3,9 @@ import App from './App.vue'
 // import ElementUI from 'element-ui'
 // import zwdUI from "/packages/index"
 // Vue.use(zwdUI)
-import { shfDroplist } from "/packages/index"
-// Vue.use(shfSelection)
+import { shfDroplist, shfSelection } from "/packages/index"
 Vue.use(shfDroplist)
+Vue.use(shfSelection)
 // import ElementUI from 'element-ui'
 // import 'element-ui/lib/theme-chalk/index.css'
 

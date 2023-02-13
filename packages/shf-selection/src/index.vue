@@ -4,7 +4,7 @@
       <span class="el-dropdown-link">
         <div :class="['label-box', hasValue ? 'hasval' : '']" slot="reference">
           <div class="label">{{ label }}</div>
-          <div class="value" v-if="multiple">{{ value.length > 1 ? getLabelByVal(value[0]) + ' + 1 ...' : value.length === 1 ? getLabelByVal(value[0]) : '' }}</div>
+          <div class="value" v-if="multiple">{{ value.length > 1 ? `${getLabelByVal(value[0])}+${value.length - 1}` : value.length === 1 ? getLabelByVal(value[0]) : '' }}</div>
           <div class="value" v-else>{{ getLabelByVal(value) }}</div>
           <div class="icon">
             <i v-show="!(!hideFilter && !isRemote && showDrop)" class="el-icon-arrow-down default"></i>
