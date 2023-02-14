@@ -249,7 +249,7 @@ export default {
             field: 'deviceState9', // 唯一键
             classify: '状态', // '基础数据', '状态'
             formType: 'input', // input, select
-            title: '设备状态',
+            title: '设备',
             value: '',
             list: [],
             isCheck: false

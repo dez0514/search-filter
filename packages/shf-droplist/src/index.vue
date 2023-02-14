@@ -117,10 +117,11 @@ export default {
     filterList() {
       let temp = []
       const { label } = this.defaultProps
-      if(this.classify) {
-        temp = this._dataList.filter(item => item[label].indexOf(this.filterText) > -1 || item[this.classify].indexOf(this.filterText) > -1)
+      const classify = this.classify
+      if(classify) {
+        temp = this._dataList.filter(item => (item[label] && item[label].indexOf(this.filterText) > -1) || (item[classify] && item[classify].indexOf(this.filterText) > -1))
       } else {
-        temp = this._dataList.filter(item => item[label].indexOf(this.filterText) > -1)
+        temp = this._dataList.filter(item => item[label] && item[label].indexOf(this.filterText) > -1)
       }
       return temp
     },

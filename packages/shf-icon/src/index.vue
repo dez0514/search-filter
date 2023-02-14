@@ -7,7 +7,7 @@
 
 <script>
 export default {
-  name: 'ShfIcon',
+  name: 'shfIcon',
   props: {
     iconClass: {
       type: String,
