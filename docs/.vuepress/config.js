@@ -51,6 +51,7 @@ const baseConfig = {
 				collapsable: false,
 				children: [
 					'specific/droplist',
+          'specific/selection',
 				]
 			},
 			// {
