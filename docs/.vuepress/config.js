@@ -22,7 +22,7 @@ const baseConfig = {
 	themeConfig: {
 		editLinks: false,
 		smoothScroll: true,
-		lastUpdated: 'Last Updated',
+		lastUpdated: '最后更新时间',
 		docsDir: 'docs',
 		sidebarDepth: 2,
 		logo: '/assets/logo.png',
@@ -32,8 +32,8 @@ const baseConfig = {
 		// 		ariaLabel: '文档菜单',
 		// 		items: [
     //       {
-    //         text: 'JIRA',
-    //         link: 'http://doc.tzt.cn:8889/secure/Dashboard.jspa'
+    //         text: 'xxx',
+    //         link: ''
     //       }
 		// 		]
 		// 	}
@@ -48,8 +48,9 @@ const baseConfig = {
 			},
       {
 				title: '组件',
-				collapsable: false,
+				collapsable: true,
 				children: [
+          'specific/icon',
 					'specific/droplist',
           'specific/selection',
 				]

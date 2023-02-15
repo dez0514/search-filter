@@ -77,6 +77,11 @@ export default {
 | is-filter | 是否显示筛选框  | boolean | — | false |
 | classify | 分类的字段（按照该字段给列表分类，不传或传空则不分类） | string | — | - |
 
+### Events
+| 事件名称 | 说明 | 回调参数 |
+|---------- |-------- |---------- |
+| getStatus | 当勾选发生变化时，在父组件中可以获取选中的结果 | — |
+
 ### Slot
 | Name | Description |
 |------|--------|
@@ -84,8 +89,3 @@ export default {
 | trigger | 整个触发器的内容 |
 | trigger-icon | 触发器icon |
 | droplist | 整个面板内容（全都自定义，属性几乎都失效） |
-
-### Events
-| 事件名称 | 说明 | 回调参数 |
-|---------- |-------- |---------- |
-| getStatus | 当勾选发生变化时，在父组件中可以获取选中的结果 | — |
