@@ -24,6 +24,7 @@
     "core-js": "^3.28.0",
     "css-loader": "^6.7.3",
     "element-ui": "^2.15.12",
+    "markdown-it-vuese": "^0.4.0",
     "node-sass": "^4.14.1",
     "sass-loader": "^8.0.2",
     "style-loader": "^3.3.1",
@@ -40,7 +41,10 @@
     "eslint-plugin-vue": "^6.2.2",
     "svg-sprite-loader": "^6.0.11",
     "vue-template-compiler": "^2.6.11",
-    "vuepress": "^1.9.8"
+    "vuepress": "^1.9.8",
+    "vuepress-plugin-demo-block": "^0.7.2",
+    "vuepress-plugin-demo-code": "^1.0.0",
+    "webpack": "^4.0.0"
   },
   "eslintConfig": {
     "root": true,

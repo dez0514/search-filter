@@ -13,11 +13,27 @@ const baseConfig = {
 	plugins: [
 		'@vuepress/back-to-top',
 		'@vuepress/last-updated',
-		'@vuepress/plugin-nprogress'
+		'@vuepress/plugin-nprogress',
+		'demo-code'
 	],
 	chainWebpack: (config) => {
 		config.resolve.alias
 			.set('@build', `../../lib`)
+	},
+	markdown: {
+		extendMarkdown: (md) => {
+			md.use(require('markdown-it-vuese'), {
+				// root: '',
+				// vueseRe: /<\[vuese-h3\]\((.+)\)/i,
+				// ruleName: 'vuese-h3',
+				// useRender: (vueseRender) => {
+				// 	const renderRes = vueseRender.render()
+				// 	const genMd = key => `### ${key}\n${renderRes[key]}\n`
+
+				// 	return Object.keys(renderRes).map(genMd).join('')
+				// }
+			})
+		}
 	},
 	themeConfig: {
 		editLinks: false,
@@ -27,32 +43,33 @@ const baseConfig = {
 		sidebarDepth: 2,
 		logo: '/assets/logo.png',
 		// nav: [
-    //   {
+		//   {
 		// 		text: '开发文档',
 		// 		ariaLabel: '文档菜单',
 		// 		items: [
-    //       {
-    //         text: 'xxx',
-    //         link: ''
-    //       }
+		//       {
+		//         text: 'xxx',
+		//         link: ''
+		//       }
 		// 		]
 		// 	}
 		// ],
 		sidebar: [
-      {
+			{
 				title: '开发指南',
 				collapsable: false,
 				children: [
 					['version/install', '安装'],
 				]
 			},
-      {
+			{
 				title: '组件',
 				collapsable: true,
 				children: [
-          'specific/icon',
+					'specific/icon',
 					'specific/droplist',
-          'specific/selection',
+					'specific/selection',
+					'helo'
 				]
 			},
 			// {
@@ -62,7 +79,7 @@ const baseConfig = {
 			// 		'version/log'
 			// 	]
 			// },
-      ['version/log', '更新日志']
+			['version/log', '更新日志']
 		]
 	}
 };
