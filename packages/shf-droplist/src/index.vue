@@ -227,6 +227,7 @@ export default {
 .shf-droplist-container {
   display: inline-block;
   vertical-align: top;
+  user-select: none;
 }
 
 .pop-content {

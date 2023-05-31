@@ -1,8 +1,13 @@
 # selection 选择器
 
+<demo-block>
+::: slot source
 <div>
   <DocSelection />
 </div>
+:::
+
+::: slot sourceCode
 
 ```vue
   <!-- 示例 -->
@@ -36,6 +41,11 @@
     console.log(val)
   }
 ```
+
+:::
+
+</demo-block>
+
 ### Attributes
 | 参数      | 说明          | 类型      | 可选值                           | 默认值  |
 |---------- |-------------- |---------- |--------------------------------  |-------- |

@@ -13,8 +13,7 @@ const baseConfig = {
 	plugins: [
 		'@vuepress/back-to-top',
 		'@vuepress/last-updated',
-		'@vuepress/plugin-nprogress',
-		'demo-code'
+		'@vuepress/plugin-nprogress'
 	],
 	chainWebpack: (config) => {
 		config.resolve.alias

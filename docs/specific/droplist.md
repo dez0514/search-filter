@@ -4,78 +4,90 @@
   <DocDroplist />
 </div>
 
-::: demo
-<div @click="onClick">Click me!</div>
-
-<script>
-export default {
-  methods: {
-    onClick: () => { window.alert(1) },
-  },
-}
-</script>
+<demo-block>
+::: slot source
+<div>
+  <DocDroplist />
+</div>
 :::
 
-```vue
-  <!-- template -->
-  <!-- 示例1 -->
-  <shf-droplist
-    :data-list="filterList" 
-    :default-props="defaultProps" 
-    :is-filter="true"
-    classify="classify" 
-    @getStatus="getStatusList" 
-  >
-  </shf-droplist>
-  <!-- 示例2 -->
-  <shf-droplist
-    :data-list="filterList" 
-    :default-props="defaultProps"  
-    title="列表筛选" 
-    list-title="可见项" 
-    :isplain="true"
-    :is-show-reset="true" 
-    :is-switch="true" 
-    @getStatus="getStatusList"
-  >
-    <div slot="trigger-icon">
-      <shf-icon style="transform: rotate(90deg);" class="icon-filter" icon-class="open" />
-    </div>
-  </shf-droplist>
-```
+使用 `data-list` 属性来控制 Droplist 的列表。
+::: slot sourceCode
 
 ```vue
-// in parent.vue
+<template>
+  <div>
+    <shf-droplist
+      :data-list="filterList" 
+      :default-props="defaultProps" 
+      :is-filter="true"
+      classify="classify" 
+      @getStatus="getStatusList" 
+    />
+    <shf-droplist style="margin-left: 5px" :data-list="filterList" :default-props="defaultProps" title="列表筛选" list-title="可见项" :isplain="true"
+      :is-show-reset="true" :is-switch="true" @getStatus="getStatusList">
+      <div slot="trigger-icon">
+        <shf-icon style="transform: rotate(90deg);" class="icon-filter" icon-class="open" />
+      </div>
+    </shf-droplist>
+  </div>
+</template>
 <script>
 export default {
-  name: 'parent',
+  name: 'DocDroplist',
   data() {
     return {
-      filterList: [ // 定义列表数据，部分字段需要与 default-props 中一致
+      filterList: [
         {
+          field: 'loginid1', // 唯一键
+          classify: '基础数据', // '基础数据', '状态'
           title: '机号',
-          key: 'loginid1', // 默认属性名为 field
-          label: '基础数据', // 默认属性名为 label
-          visible: false, // 默认属性名为 isCheck
-          disabled: true // 默认属性名为 disabled
+          isCheck: false,
+          disabled: true
+        },
+        {
+          field: 'loginid2', // 唯一键
+          // classify: '基础数据', // '基础数据', '状态'
+          title: '机号',
+          isCheck: true,
+          disabled: true
+        },
+        {
+          field: 'loginid3', // 唯一键
+          classify: '基础数据', // '基础数据', '状态'
+          title: '机号',
+          isCheck: false
+        },
+        {
+          field: 'loginid4', // 唯一键
+          classify: '基础数据', // '基础数据', '状态'
+          title: '机号',
+          isCheck: false
         }
       ],
       defaultProps: {
-        field: 'key',
-        label: 'label',
-        isCheck: 'visible',
-        disabled: 'disabled'
+        field: 'field', // 列表唯一键
+        isCheck: 'isCheck', // 是否选中
+        disabled: 'disabled',
+        label: 'title',
+        classify: 'classify'
       }
     }
   },
   methods: {
-    getStatusList(vals) { // 获取勾选状态
+    getStatusList(vals) {
       console.log(vals)
     }
   }
 }
 </script>
 ```
+
+:::
+
+</demo-block>
+
+
 ### Attributes
 | 参数      | 说明          | 类型      | 可选值                           | 默认值  |
 |---------- |-------------- |---------- |--------------------------------  |-------- |
